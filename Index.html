@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Multi-page template</title> 
+	<link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="./style.css"/> <!--credit to https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934-->
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+
+</head> 
+
+	
+<body> 
+
+
+<!-- Start of login page: #login -->
+
+
+
+
+            
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+
+
+
+	<div data-role="header">
+		<a href="#" id="login" data-direction="reverse" data-role="button" data-theme="b" style="float:left">Login With Google</a>
+		<a href="#prefs" data-direction="reverse" data-role="button" data-theme="b" style="float:right">Preferences</a>
+		<h1>Sticky Notes</h1>
+		<p data-role="content" id="username"></p>
+	</div><!-- /header -->
+
+	<div data-role="content" >	
+		<h2>You can type here to add a sticky note</h2>
+		<form id="message-form">
+		<input type="text" name="note" id="note" placeholder="Enter your note here">
+		<button type="submit">Add Note</button>
+		</form>
+		
+		<div>
+			<ul id="stickyNoteContainer">
+				<li>
+					<a href="#">
+						<h3>Nothing works</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	
+
+	</div><!-- /content -->
+	
+
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #prefs -->
+<div data-role="page" id="prefs" data-theme="b">
+
+	<div data-role="header">
+		<h1>Preferences</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="b">	
+	<p>Maybe one day there will be preferences here that use indexedDB...Probably not.</p>
+		<p><a href="#one" data-direction="reverse" data-role="button" data-theme="b">Back to Sticky Notes</a></p>	
+		
+		
+	</div><!-- /content -->
+	
+	
+
+</div><!-- /page two -->
+
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+	<div data-role="header">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<h2>Popup</h2>
+		<p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>		
+		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
+	</div><!-- /content -->
+
+</div><!-- /page popup -->
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+<script src="./main.js"></script>
+<!-- <script src="./idb.js"></script> -->
+</body>
+</html>
